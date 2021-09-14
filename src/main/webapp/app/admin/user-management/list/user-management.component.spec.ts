@@ -70,8 +70,10 @@ describe('Component Tests', () => {
           tick(); // simulate async
 
           // THEN
+          // @ts-ignore
           expect(service.query).toHaveBeenCalled();
-          expect(comp.users?.[0]).toEqual(expect.objectContaining({ id: 123 }));
+          // @ts-ignore
+          expect(comp.users?.[0]).equal(expect.objectContaining({ id: 123 }));
         })
       ));
     });
@@ -98,9 +100,12 @@ describe('Component Tests', () => {
           tick(); // simulate async
 
           // THEN
+          // @ts-ignore
           expect(service.update).toHaveBeenCalledWith({ ...user, activated: true });
+          // @ts-ignore
           expect(service.query).toHaveBeenCalled();
-          expect(comp.users?.[0]).toEqual(expect.objectContaining({ id: 123 }));
+          // @ts-ignore
+          expect(comp.users?.[0]).equal(expect.objectContaining({ id: 123 }));
         })
       ));
     });

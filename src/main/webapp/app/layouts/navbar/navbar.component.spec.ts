@@ -60,6 +60,7 @@ describe('Component Tests', () => {
       comp.ngOnInit();
 
       // THEN
+      // @ts-ignore
       expect(profileService.getProfileInfo).toHaveBeenCalled();
     });
 
@@ -68,18 +69,20 @@ describe('Component Tests', () => {
       comp.ngOnInit();
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toBeNull();
 
       // WHEN
       accountService.authenticate(account);
 
       // THEN
-      expect(comp.account).toEqual(account);
+      expect(comp.account).equal(account);
 
       // WHEN
       accountService.authenticate(null);
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toBeNull();
     });
 
@@ -91,12 +94,14 @@ describe('Component Tests', () => {
       comp.ngOnInit();
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toEqual(account);
 
       // WHEN
       accountService.authenticate(null);
 
       // THEN
+      // @ts-ignore
       expect(comp.account).toBeNull();
     });
   });
